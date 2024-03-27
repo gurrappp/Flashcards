@@ -8,7 +8,7 @@ namespace FlashcardProject
         public string? connectionString = ConfigurationManager.AppSettings.Get("ConnectionString");
         public static void Main(string[] args)
         {
-
+            GetUserInput.Menu();
         }
     }
 }

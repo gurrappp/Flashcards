@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlashcardProject
 {
-    public class Stack
+    internal class StudySession
     {
-        public string Name { get; set; }
-        public List<Flashcard>? Flashcards { get; set; }
     }
 }
