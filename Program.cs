@@ -5,10 +5,14 @@ namespace FlashcardProject
 {
     public class Program
     {
-        public string? connectionString = ConfigurationManager.AppSettings.Get("ConnectionString");
+        public static string? connectionString = ConfigurationManager.AppSettings.Get("ConnectionString");
         public static void Main(string[] args)
         {
-            GetUserInput.Menu();
+            
+            Console.WriteLine(connectionString);
+            GetUserInput getUserInput = new();
+            
+            getUserInput.Menu();
         }
     }
 }

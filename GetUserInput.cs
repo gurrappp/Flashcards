@@ -9,7 +9,7 @@ namespace FlashcardProject
     internal class GetUserInput
     {
 
-        public static void Menu()
+        public void Menu()
         {
             bool closeApp = false;
 
