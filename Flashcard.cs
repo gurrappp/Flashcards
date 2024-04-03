@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlashcardProject
+namespace FlashCardProject
 {
-    public class Flashcard
+    public class FlashCard
     {
-        public Stack? Stack { get;set; }
+        public int Id { get; set; }
+        public Stack? Stack { get; set; }
+        public string Question { get; set; } = "";
+        public string Answer { get; set; } = "";
     }
 }

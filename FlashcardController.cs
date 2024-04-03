@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlashcardProject
+namespace FlashCardProject
 {
-    public  class FlashcardController
+    public  class FlashCardController
     {
     }
 }

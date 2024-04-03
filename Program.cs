@@ -1,7 +1,7 @@
 ﻿
 using System.Configuration;
 
-namespace FlashcardProject
+namespace FlashCardProject
 {
     public class Program
     {

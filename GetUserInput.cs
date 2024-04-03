@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlashcardProject
+namespace FlashCardProject
 {
     internal class GetUserInput
     {
@@ -17,6 +17,10 @@ namespace FlashcardProject
             {
                 Console.WriteLine("Welcome to Flashcards!\n");
                 Console.WriteLine("------------MENU------------");
+                Console.WriteLine("0 - exit");
+                Console.WriteLine("1 - Manage Stacks");
+                Console.WriteLine("1 - Manage FlashCards");
+
 
 
                 var option = Console.ReadLine();
