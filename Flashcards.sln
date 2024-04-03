@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashcardProject", "FlashcardProject.csproj", "{5E1591F3-CDC0-45B8-B82B-AB42354D7BD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashCardProject", "FlashCardProject.csproj", "{5E1591F3-CDC0-45B8-B82B-AB42354D7BD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
