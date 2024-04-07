@@ -9,6 +9,8 @@ namespace FlashCardProject
     internal class GetUserInput
     {
 
+        FlashCardController controller = new();
+
         public void Menu()
         {
             bool closeApp = false;
@@ -33,12 +35,18 @@ namespace FlashCardProject
                     case 0:
                         break;
                     case 1:
+                        ManageStacks();
                         break;
                     default:
                         break;
 
                 }
             }
+        }
+
+        public void ManageStacks()
+        {
+            controller.GetStacks();
         }
     }
 }
