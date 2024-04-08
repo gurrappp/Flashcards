@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
+using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,11 +25,11 @@ namespace FlashCardProject
             {
                 connection.Open();
 
+                List<Stack> stacks = new List<Stack>();
 
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read()) { }
-                }
+                //var objects = command.ExecuteQuery<Stack>(query).ToList();
+
+                
 
 
 
@@ -60,6 +62,16 @@ namespace FlashCardProject
 
 
             return stackTable;
+        }
+
+        public List<T> getObjects<T>(IDbConnection connection, string tableName, params string[] columnNames)
+        {
+            string query = $@"SELECT {String.Join(",", columnNames)} FROM {tableName}";
+            using (var dc = new DataContext(connection))
+            {
+                return dc.ExecuteQuery<T>(query).ToList();
+            }
+
         }
 
     }
