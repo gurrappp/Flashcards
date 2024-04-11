@@ -21,7 +21,7 @@ namespace FlashCardProject
                 Console.WriteLine("------------MENU------------");
                 Console.WriteLine("0 - exit");
                 Console.WriteLine("1 - Manage Stacks");
-                Console.WriteLine("1 - Manage FlashCards");
+                Console.WriteLine("2 - Manage FlashCards");
 
 
 
