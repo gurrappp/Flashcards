@@ -16,10 +16,9 @@ namespace FlashCardProject
     {
         public static string? connectionString = ConfigurationManager.AppSettings.Get("ConnectionString");
         //Console.WriteLine(connectionString);
-        internal List<Stack> GetStacks()
+        internal void GetStacks()
         {
-            List<Stack> stackTable = new List<Stack>();
-            //string query = "select * from Stacks";
+            
 
             using (var connection = new SqlConnection(connectionString))
             {
@@ -49,7 +48,37 @@ namespace FlashCardProject
             }
 
 
-            return stackTable;
+            
+        }
+
+        internal void GetFlashCards()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                List<FlashCard> flashCards = new List<FlashCard>();
+
+                string sql = "select * from FlashCards";
+                IEnumerable<dynamic> query = connection.Query<FlashCard>(sql);
+
+
+
+                var table = new Table();
+                table.AddColumns("Id", "StackId","Question", "Answer");
+
+                foreach (FlashCard rows in query)
+                {
+                    table.AddRow(rows.Id.ToString(), rows.StackId.ToString(),rows.Question, rows.Answer);
+                }
+
+                table.Border = TableBorder.MinimalDoubleHead;
+
+                table.Centered();
+
+                // Render the table to the console
+                AnsiConsole.Write(table);
+            }
         }
 
         //public List<T> getObjects<T>(IDbConnection connection, string tableName, params string[] columnNames)

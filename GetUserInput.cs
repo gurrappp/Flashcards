@@ -37,6 +37,9 @@ namespace FlashCardProject
                     case 1:
                         ManageStacks();
                         break;
+                    case 2:
+                        ManageFlashCards();
+                        break;
                     default:
                         break;
 
@@ -47,6 +50,11 @@ namespace FlashCardProject
         public void ManageStacks()
         {
             controller.GetStacks();
+        }
+
+        public void ManageFlashCards()
+        {
+            controller.GetFlashCards();
         }
     }
 }
