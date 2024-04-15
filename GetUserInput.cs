@@ -46,10 +46,32 @@ namespace FlashCardProject
                 }
             }
         }
+        
+        public string GetStackName()
+        {
+            Console.WriteLine("Choose a stack to work with. Write Name!\n");
+            Console.WriteLine("Any number - exit");
+
+            var option = Console.ReadLine();
+
+            if (int.TryParse(option, out _))
+                Menu();
+
+            return option ?? "";
+
+        }
 
         public void ManageStacks()
         {
+            Console.Clear();
             controller.GetStacks();
+            string currentStack = GetStackName();
+            if (!controller.ValidateStackName(currentStack))
+                Menu();
+
+            Console.ReadLine();
+
+            
         }
 
         public void ManageFlashCards()

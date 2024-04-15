@@ -19,7 +19,6 @@ namespace FlashCardProject
         internal void GetStacks()
         {
             
-
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -46,9 +45,22 @@ namespace FlashCardProject
                 // Render the table to the console
                 AnsiConsole.Write(table);
             }
+        }
 
+        internal bool ValidateStackName(string name)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
-            
+                List<Stack> stacks = new List<Stack>();
+                //var sql = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
+                string sql = "select * from Stacks WHERE name = '" + name + "'";
+                IEnumerable<dynamic> query = connection.Query<Stack>(sql);
+
+                return query.Any();
+
+            }
         }
 
         internal void GetFlashCards()
