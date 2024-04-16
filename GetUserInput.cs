@@ -47,6 +47,18 @@ namespace FlashCardProject
             }
         }
         
+        public void ManageStacks()
+        {
+            Console.Clear();
+            controller.GetStacks();
+            string currentStack = GetStackName();
+            if (!controller.ValidateStackName(currentStack))
+                Menu();
+
+            Console.ReadLine();
+
+            
+        }
         public string GetStackName()
         {
             Console.WriteLine("Choose a stack to work with. Write Name!\n");
@@ -61,18 +73,6 @@ namespace FlashCardProject
 
         }
 
-        public void ManageStacks()
-        {
-            Console.Clear();
-            controller.GetStacks();
-            string currentStack = GetStackName();
-            if (!controller.ValidateStackName(currentStack))
-                Menu();
-
-            Console.ReadLine();
-
-            
-        }
 
         public void ManageFlashCards()
         {
